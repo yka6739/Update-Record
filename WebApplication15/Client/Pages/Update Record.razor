@@ -1,0 +1,34 @@
+﻿@page "/update"
+
+
+<h3>Update_Record</h3>
+
+
+<EditForm Model="i" OnValidSubmit="Edit" >
+
+<div class="form-group">
+    <InputText class="form-control" @bind-Value="@i.Name"></InputText>
+    <InputText class="form-control" @bind-Value="@i.City"></InputText>
+    <InputText class="form-control" @bind-Value="@i.Country"></InputText>
+
+</div>
+<button class="btn btn-success" type="submit">Update Record</button>
+
+</EditForm>
+
+
+
+@code {
+    public Info i = new Info();
+    protected override void OnInitialized()
+    {
+        i = new Info() { Name = "aman", City = "Noida", Country = "India" };
+    }
+    public void Edit()
+    {
+        Console.WriteLine($"Name is ={i.Name}");
+        Console.WriteLine($"City is ={i.City}");
+        Console.WriteLine($"Country is ={i.Country}");
+
+    }
+}

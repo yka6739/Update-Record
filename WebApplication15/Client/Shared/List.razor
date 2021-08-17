@@ -1,0 +1,24 @@
+﻿
+@foreach (var i in d)
+{
+    <p>Id is :<b> @i.Id</b></p>
+    <p>Name  is :<b> @i.Name</b></p>
+    <p>City is :<b> @i.City</b></p>
+}
+
+
+
+@code{
+    public List<Data> d;
+    protected override void OnInitialized()
+    {
+        d = new List<Data>()
+{
+            new Data(){Id=1, Name="Amit",City="Noida"},
+            new Data(){Id=2, Name="Amit",City="Noida"},
+            new Data(){Id=3, Name="Amit",City="Noida"},
+            new Data(){Id=4, Name="Amit",City="Noida"},
+            new Data(){Id=5, Name="Amit",City="Noida"}
+        };
+    }
+}
